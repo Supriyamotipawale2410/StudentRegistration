@@ -84,7 +84,6 @@ Scanner scanner = new Scanner(System.in);
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection  con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demos","root","root"); 
 	Statement st = con.createStatement();
-//  String sql= "Select * from demotable2 Where userName=";
 
 	PreparedStatement prep = con.prepareStatement("select userName from demotable2 where userName= ?");
 
@@ -92,12 +91,7 @@ Scanner scanner = new Scanner(System.in);
 	   ResultSet rs = prep.executeQuery();
 	   
 	   
-//	   while(rs.next()) {
-//		   user_name = rs.getString(1);
-//		   pass_word = rs.getString(2);
-//		   System.out.println(rs.getString(1));
-//
-//	   }
+
 	   if(rs.next()) {
 		   System.out.println("successful");
 	   }
@@ -106,24 +100,7 @@ Scanner scanner = new Scanner(System.in);
 
 	   }
 
-//    Statement stmt = connect.createStatement();
-//    String query= "Select * from demotable2 Where userName='"  + "' and password='"  + "'";
-//    System.out.println(query);
 
-
-//    while (rs.next()) { 
-//        String user = rs.getString("userName");
-//        String pass = rs.getString("password");        
-//    
-//	}
-//    System.out.println(rs.getString("userName"));
-
-//	if ((user_name==  rs.getString("userName")) && (pass_word==rs.getString("password"))) {
-//		System.out.println("Login Successfully....");
-//	}
-//	else {
-//		System.out.println("Login Failed....");
-//	}
 	}catch(Exception e) {
 		System.out.println(e);
 	}
